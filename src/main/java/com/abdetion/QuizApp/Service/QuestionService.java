@@ -22,5 +22,9 @@ public class QuestionService {
     }
 
 
+    public String addQuestion(Question question) {
+        questionRepository.save(question);
+        return "Question Added Successfully...";
+    }
 }
 
