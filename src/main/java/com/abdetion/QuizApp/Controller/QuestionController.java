@@ -2,8 +2,10 @@ package com.abdetion.QuizApp.Controller;
 
 import com.abdetion.QuizApp.Entity.Question;
 import com.abdetion.QuizApp.Service.QuestionService;
+import jdk.jfr.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,4 +23,8 @@ public class QuestionController {
         return questionService.getAllQuestions();
     }
 
+    @GetMapping("/category/{category}")
+    public List<Question> getQuestionsByCategory(@PathVariable String category){
+        return questionService.getQuestionsByCategory(category);
+    }
 }
