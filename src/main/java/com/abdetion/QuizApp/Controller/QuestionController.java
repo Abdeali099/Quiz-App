@@ -34,4 +34,9 @@ public class QuestionController {
         return questionService.deleteQuestion(id);
     }
 
+    @PatchMapping("/update")
+    public String updateQuestion(@RequestBody Question question){
+        return questionService.updateQuestion(question);
+    }
+
 }
