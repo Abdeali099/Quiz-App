@@ -5,6 +5,7 @@ import com.abdetion.QuizApp.DAO.QuizRepository;
 import com.abdetion.QuizApp.Entity.Question;
 import com.abdetion.QuizApp.Entity.QuestionWrapper;
 import com.abdetion.QuizApp.Entity.Quiz;
+import com.abdetion.QuizApp.Entity.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -56,5 +57,26 @@ public class QuizService {
 
         return new ResponseEntity<>(questionsForUser,HttpStatus.OK);
 
+    }
+
+    public ResponseEntity<Integer> calculateResult(int id, List<UserResponse> userResponses) {
+
+        Optional<Quiz> quiz=quizRepository.findById(id);
+
+        List<Question> questionsOfQuiz=quiz.get().getQuestions();
+
+        int score=0;
+        int i=0;
+
+        for (UserResponse u: userResponses) {
+
+            if (u.getSubmittedAnswer().equals(questionsOfQuiz.get(i).getRightAnswer())) {
+                score++;
+            }
+
+           i++;
+        }
+
+        return new ResponseEntity<>(score,HttpStatus.OK);
     }
 }
