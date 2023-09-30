@@ -1,10 +1,6 @@
 # Quiz-App
 This is API for Quiz , built from Spring Boot
 
-# API Image : 
-
-![image](https://github.com/Abdeali099/Quiz-App/assets/99460106/835a8ca1-2c22-46f1-9a0c-057307e5443c)
-
 # API : 
 
 <h3> For Questions :  <h3>
