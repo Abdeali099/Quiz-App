@@ -27,5 +27,3 @@ This is API for Quiz , built from Spring Boot
 <strong>2) Get Quiz </strong>  &nbsp <pre> http://localhost:8080/api/quiz/get/{id} </pre>
 <br>
 <strong>3) Submit Quiz </strong>  &nbsp <pre> http://localhost:8080/api/quiz/submit/{id} </pre>
-<br>
-<strong> </strong>  &nbsp <pre>  </pre>
